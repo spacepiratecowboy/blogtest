@@ -11,6 +11,7 @@ How to set up the project (using a UNIX-based machine):
 * Inside root directory, run `virtualenv venv`
 * Run `source venv/bin/activate`
 * Run `pip install -r requirements.txt`
+* Run `python manage.py migrate`
 * Run `python manage.py createsuperuser` and follow the prompts to create a local admin account
 * Run `python manage.py runserver` and then navigate to `localhost:8000/admin` in a web browser
 * Log into the admin page, then use the UI to create a new post, or several posts
