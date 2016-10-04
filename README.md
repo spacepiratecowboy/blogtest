@@ -8,7 +8,7 @@
 
 How to set up the project:
 * Install python, pip and virtualenv
-* Inside root of directory, run `virtualenv venv`
+* Inside root directory, run `virtualenv venv`
 * Run `source venv/bin/activate`
 * Run `pip install -r requirements.txt`
 * Run `python manage.py createsuperuser` and follow the prompts to create a local admin account
