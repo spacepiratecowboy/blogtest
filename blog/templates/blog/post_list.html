@@ -1,22 +1,28 @@
 <html>
     <head>
         <title>Django Girls blog</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-+ENW/yibaokMnme+vBLnHMphUYxHs34h9lpdbSLuAwGkOKFRl4C34WkjazBtb7eT" crossorigin="anonymous">
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">My Blog</a>
+            </div>
+          </div>
+        </nav>
+        {% if posts %}
+        {% for post in posts %}
+        <div class="well col-md-6" style="margin-left: 20px">
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>Published {{ post.published_date | date }}</p>
+            <p>Author: {{ post.author }}</p>
+            <p>{{ post.text }}</p>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+        {% endfor %}
+        {% else %}
+        <h3>No posts to show!</h3>
+        {% endif %}
     </body>
 </html>
